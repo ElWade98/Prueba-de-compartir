@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcnu600oa3qnh"]
+
+[ext_resource type="Texture2D" uid="uid://nwj3s4tn5wxh" path="res://Assets/sprites/fruit.png" id="1_xjnjp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t6ed"]
+atlas = ExtResource("1_xjnjp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojy38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t6ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34rhd"]
+radius = 5.0
+
+[node name="Fruta" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ojy38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_34rhd")
+
+[node name="RayCast derecha" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(10, 0)
+
+[node name="RayCast izquierda" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(-10, 0)
