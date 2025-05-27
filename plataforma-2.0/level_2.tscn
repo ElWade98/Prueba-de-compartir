@@ -195,4 +195,5 @@ position = Vector2(375, 514)
 shape = SubResource("WorldBoundaryShape2D_b8w1n")
 
 [node name="Fruta" parent="." instance=ExtResource("4_61osd")]
-position = Vector2(104, 42)
+position = Vector2(156, -13)
+scale = Vector2(5, 5)
